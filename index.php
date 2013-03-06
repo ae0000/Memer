@@ -9,6 +9,7 @@ $json_file = 'assets/data.json'; // This is the file we will store the memes in
 $meme_images =glob(DOCROOT.$meme_image_dir.'*.jpg');
 
 // Check for postage
+$success = FALSE;
 if ($_POST)
 {
   // Add the pushed meme to the json
@@ -23,6 +24,8 @@ if ($_POST)
 
   // Save the json back out again
   file_put_contents(DOCROOT.$json_file, json_encode($current_memes));
+
+  $success = TRUE;
 }
 
 ?>
@@ -54,6 +57,8 @@ if ($_POST)
   </head>
 
   <body>
+
+
 
     <!-- NAVBAR
     ================================================== -->
@@ -102,6 +107,16 @@ foreach ($meme_images as $image)
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
     </div><!-- /.carousel -->
+
+    <?php if ($success) : ?>
+  <div class="container">
+    <div class="alert alert-success">
+      <h4>Hooray!</h4> Your meme has been created. Have a look on the screen over there...
+    </div>
+  </div>
+    <? endif; ?>
+
+
 
 	<div id="formage" class="container">
 		<form method="post">
