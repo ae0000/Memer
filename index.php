@@ -33,7 +33,7 @@ if ($_POST)
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Carousel Template &middot; Bootstrap</title>
+    <title>Meme-berlater</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -127,7 +127,7 @@ foreach ($meme_images as $image)
 			<label>Top caption</label>
 			<input type="text" class="span12" name="bottomText" placeholder="This goes at the bottom of the image...">
       <input id="memeimage" type="hidden" name="memeimage" value="<?php echo basename($meme_images[0]); ?>" >
-			<button type="submit" class="btn btn-block">MAKE IT</button>
+			<button type="submit" class="btn btn-block btn-info">MAKE IT</button>
 		  </fieldset>
 		</form>
 	</div>
